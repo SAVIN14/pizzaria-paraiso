@@ -102,7 +102,7 @@ const PRODUCTS = [
     name: 'Pizza Mussarela',
     desc: 'Molho de tomate, mussarela e orégano.',
     prices: { P: 30.00, G: 45.00 },
-    image: 'https://images.unsplash.com/photo-1573821663912-569905455b1a?auto=format&fit=crop&w=600&q=80',
+    image: 'logo.jpg',
     type: 'pizza'
   },
   {
