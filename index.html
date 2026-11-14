@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Pizzaria e Doceria Paraíso | Cardápio Digital</title>
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/img/logo.jpg">
+  
+  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ================================================== -->
+  <!-- LOADING SCREEN (MINIMALISTA, RÁPIDA E ELEGANTE) -->
+  <!-- ================================================== -->
+  <div id="loading-screen" class="loading-screen">
+    <div class="loading-content">
+      <div class="loading-logo-box">
+        <img src="assets/img/logo.jpg" alt="Pizzaria e Doceria Paraíso" class="loading-logo">
+        <div class="loading-spinner-ring"></div>
+      </div>
+      <h2 class="loading-brand">Pizzaria e Doceria Paraíso</h2>
+      <p class="loading-tag">Cardápio Digital</p>
+    </div>
+  </div>
+
+  <!-- ================================================== -->
+  <!-- TOP BANNER / ANNOUNCEMENT -->
+  <!-- ================================================== -->
+ 
+
+  <!-- ================================================== -->
+  <!-- HEADER -->
+  <!-- ================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <div class="brand-block">
+        <div class="header-logo-container">
+          <img src="assets/img/logo.jpg" alt="Logo Paraíso" class="header-logo">
+          <span class="status-dot-pulse" title="Aberto"></span>
+        </div>
+        <div class="brand-text">
+          <h1 class="brand-title">Pizzaria e Doceria Paraíso</h1>
+          <p class="brand-tagline">PEÇA E RECEBA EM CASA!</p>
+          <p class="brand-meta"><i class="fa-solid fa-location-dot text-gold"></i> Av. João Bitonio • Org.: Ana Paula Isidório</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="btn-open-cart-header" class="btn-cart-header" aria-label="Abrir carrinho">
+          <div class="cart-icon-wrapper">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span id="cart-badge-count" class="cart-badge">0</span>
+          </div>
+          <div class="cart-header-subtotal">
+            <span class="cart-header-label">Seu Pedido</span>
+            <span id="cart-header-val" class="cart-header-val">R$ 0,00</span>
+          </div>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================================================== -->
+  <!-- HERO BANNER -->
+  <!-- ================================================== -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="hero-card">
+        <div class="hero-content">
+          <span class="hero-chip"><i class="fa-solid fa-crown text-gold"></i> Sabor & Tradição</span>
+          <h2 class="hero-title">O melhor em Pizzas, Pastéis e Petiscos para você.</h2>
+          <p class="hero-desc">Massa artesanal, recheios fartos e ingredientes selecionados com o toque exclusivo da Doceria Paraíso.</p>
+          <div class="hero-badges">
+            <span class="hero-badge-item"><i class="fa-solid fa-clock text-gold"></i> Atendimento Rápido</span>
+            <span class="hero-badge-item"><i class="fa-solid fa-shield-heart text-gold"></i> Qualidade Premium</span>
+            <span class="hero-badge-item"><i class="fa-brands fa-whatsapp text-gold"></i> Pedidos no WhatsApp</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================================== -->
+  <!-- SEARCH & FILTER BAR -->
+  <!-- ================================================== -->
+  <div class="search-section">
+    <div class="container">
+      <div class="search-input-wrapper">
+        <i class="fa-solid fa-magnifying-glass search-icon"></i>
+        <input type="text" id="search-input" placeholder="Buscar no cardápio (ex: Calabresa, Frango, Pastel...)" autocomplete="off">
+        <button id="clear-search-btn" class="clear-search-btn" style="display: none;" aria-label="Limpar busca">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================== -->
+  <!-- CATEGORIES NAVIGATION (STICKY & SCROLLABLE) -->
+  <!-- ================================================== -->
+  <nav class="categories-nav-sticky" id="categories-nav">
+    <div class="container categories-wrapper">
+      <ul class="categories-list" id="categories-list">
+        <!-- Rendered dynamically via JS -->
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ================================================== -->
+  <!-- MAIN MENU CONTAINER -->
+  <!-- ================================================== -->
+  <main class="menu-main">
+    <div class="container" id="menu-sections-container">
+      <!-- Categories and product cards rendered dynamically by JS -->
+    </div>
+  </main>
+
+  <!-- ================================================== -->
+  <!-- FOOTER -->
+  <!-- ================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <img src="assets/img/logo.jpg" alt="Pizzaria e Doceria Paraíso" class="footer-logo">
+          <h3>Pizzaria e Doceria Paraíso</h3>
+          <p class="footer-slogan">"PEÇA E RECEBA EM CASA!"</p>
+          <p class="footer-org">Org.: Ana Paula Isidório</p>
+        </div>
+
+        <div class="footer-col info-col">
+          <h4><i class="fa-solid fa-location-dot text-gold"></i> Endereço</h4>
+          <p>Av. João Bitonio</p>
+          <p>São João da Canabrava - Piauí</p>
+          <p class="footer-tip">Opções de Entrega, Retirada e Consumo no Local!</p>
+        </div>
+
+        <div class="footer-col contact-col">
+          <h4><i class="fa-brands fa-whatsapp text-gold"></i> Pedidos & Contato</h4>
+          <p class="footer-phone"><a href="https://wa.me/5589988194395" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> (89) 98819-4395</a></p>
+          <p>Atendimento diário com as melhores opções da cidade.</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Pizzaria e Doceria Paraíso. Todos os direitos reservados.</p>
+        <p class="footer-credits">Cardápio Digital Oficial • São João da Canabrava</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================================================== -->
+  <!-- MOBILE FLOATING CART BAR -->
+  <!-- ================================================== -->
+  <div id="mobile-floating-cart" class="mobile-floating-cart">
+    <button id="btn-open-mobile-cart" class="btn-mobile-cart">
+      <div class="mobile-cart-left">
+        <span class="mobile-cart-count" id="mobile-cart-count">0</span>
+        <div class="mobile-cart-text">
+          <span class="mobile-cart-label">Ver Pedido</span>
+          <span class="mobile-cart-subtext">Clique para finalizar</span>
+        </div>
+      </div>
+      <div class="mobile-cart-right">
+        <span class="mobile-cart-total" id="mobile-cart-total">R$ 0,00</span>
+        <i class="fa-solid fa-chevron-right"></i>
+      </div>
+    </button>
+  </div>
+
+  <!-- ================================================== -->
+  <!-- CART DRAWER / MODAL -->
+  <!-- ================================================== -->
+  <div id="cart-drawer-backdrop" class="cart-drawer-backdrop"></div>
+  
+  <aside id="cart-drawer" class="cart-drawer" aria-labelledby="cart-drawer-title">
+    <div class="cart-header">
+      <div class="cart-header-title-box">
+        <i class="fa-solid fa-bag-shopping text-red"></i>
+        <h2 id="cart-drawer-title">Seu Pedido</h2>
+      </div>
+      <button id="btn-close-cart" class="btn-close-drawer" aria-label="Fechar carrinho">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+
+    <!-- Empty Cart State -->
+    <div id="cart-empty" class="cart-empty">
+      <div class="cart-empty-icon">
+        <i class="fa-solid fa-utensils"></i>
+      </div>
+      <h3>Seu carrinho está vazio</h3>
+      <p>Nenhum item adicionado ainda. Explore o cardápio e escolha suas delícias preferidas!</p>
+      <button id="btn-back-to-menu" class="btn-primary-action">
+        Ver Cardápio
+      </button>
+    </div>
+
+    <!-- Filled Cart Body -->
+    <div id="cart-filled" class="cart-filled">
+      
+      <!-- Cart Items List -->
+      <div class="cart-items-scroll" id="cart-items-list">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <!-- Modality & Delivery Section -->
+      <div class="delivery-calc-card">
+        <div class="delivery-calc-header">
+          <i class="fa-solid fa-truck-fast text-red"></i>
+          <h4>Forma de Recebimento</h4>
+        </div>
+        
+        <!-- Modality Selector -->
+        <div class="modality-pills">
+          <button type="button" class="modality-pill active" data-modality="delivery">
+            <i class="fa-solid fa-motorcycle"></i>
+            <span>Entrega</span>
+          </button>
+          <button type="button" class="modality-pill" data-modality="retirada">
+            <i class="fa-solid fa-store"></i>
+            <span>Retirar</span>
+          </button>
+          <button type="button" class="modality-pill" data-modality="local">
+            <i class="fa-solid fa-chair"></i>
+            <span>Consumir no Local</span>
+          </button>
+        </div>
+
+        <!-- Locality Selector (shown only for Delivery) -->
+        <div id="locality-selector-box" class="locality-box">
+          <label for="locality-select" class="field-label">Selecione sua localidade para taxa:</label>
+          <div class="select-wrapper">
+            <select id="locality-select">
+              <option value="Canabrava" data-fee="2.00" selected>Canabrava — R$ 2,00 (Padrão)</option>
+              <option value="Aparecida" data-fee="5.00">Aparecida — R$ 5,00</option>
+              <option value="Coabe" data-fee="4.00">Coabe — R$ 4,00</option>
+              <option value="Currais" data-fee="3.00">Currais — R$ 3,00</option>
+              <option value="São Luís" data-fee="5.00">São Luís — R$ 5,00</option>
+            </select>
+            <i class="fa-solid fa-chevron-down select-arrow"></i>
+          </div>
+          <p id="locality-notice" class="locality-notice"><i class="fa-solid fa-circle-info"></i> A taxa de entrega será somada automaticamente ao total.</p>
+        </div>
+
+        <!-- Local / Retirada Badge (shown for pickup/dine-in) -->
+        <div id="modality-free-badge" class="modality-free-badge" style="display: none;">
+          <i class="fa-solid fa-circle-check text-gold"></i>
+          <span id="modality-free-text">Sem taxa de entrega (R$ 0,00)</span>
+        </div>
+      </div>
+
+      <!-- Bill Breakdown -->
+      <div class="cart-summary">
+        <div class="summary-line">
+          <span>Subtotal</span>
+          <span id="summary-subtotal">R$ 0,00</span>
+        </div>
+        <div class="summary-line" id="summary-delivery-line">
+          <span>Taxa de Entrega</span>
+          <span id="summary-delivery">R$ 0,00</span>
+        </div>
+        <div class="summary-line total-line">
+          <span>TOTAL</span>
+          <span id="summary-total" class="summary-total-val">R$ 0,00</span>
+        </div>
+      </div>
+
+      <!-- Proceed to Checkout Button -->
+      <div class="cart-actions-footer">
+        <button id="btn-proceed-checkout" class="btn-checkout-primary">
+          <span>Continuar para Checkout</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </button>
+      </div>
+
+    </div>
+  </aside>
+
+  <!-- ================================================== -->
+  <!-- CHECKOUT MODAL -->
+  <!-- ================================================== -->
+  <div id="checkout-modal-backdrop" class="modal-backdrop">
+    <div class="checkout-modal-card" role="dialog" aria-labelledby="checkout-title">
+      <div class="modal-header">
+        <div class="modal-title-box">
+          <i class="fa-brands fa-whatsapp text-green"></i>
+          <div>
+            <h2 id="checkout-title">Finalizar Pedido</h2>
+            <p class="modal-subtitle">Confirme seus dados para enviarmos pelo WhatsApp</p>
+          </div>
+        </div>
+        <button id="btn-close-checkout" class="btn-close-modal" aria-label="Fechar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="modal-body">
+        
+        <!-- Mini Order Summary Card -->
+        <div class="checkout-mini-summary">
+          <div class="checkout-mini-header">
+            <span><i class="fa-solid fa-receipt"></i> Resumo Rápido</span>
+            <span id="checkout-modality-badge" class="badge-modality-pill">Entrega</span>
+          </div>
+          <div class="checkout-mini-items" id="checkout-mini-items">
+            <!-- mini items list -->
+          </div>
+          <div class="checkout-mini-totals">
+            <div>Subtotal: <strong id="checkout-subtotal">R$ 0,00</strong></div>
+            <div>Entrega: <strong id="checkout-delivery">R$ 0,00</strong></div>
+            <div class="checkout-final-total">TOTAL: <strong id="checkout-total">R$ 0,00</strong></div>
+          </div>
+        </div>
+
+        <!-- Form Details -->
+        <form id="checkout-form" onsubmit="return false;">
+          
+          <div class="form-section-title">
+            <i class="fa-solid fa-user text-red"></i> 1. Seus Dados
+          </div>
+
+          <div class="form-group">
+            <label for="customer-name" class="form-label">Seu Nome Completo *</label>
+            <input type="text" id="customer-name" class="form-control" placeholder="Ex: Maria dos Santos" required>
+          </div>
+
+          <div class="form-group">
+            <label for="customer-phone" class="form-label">Telefone / WhatsApp (Opcional)</label>
+            <input type="tel" id="customer-phone" class="form-control" placeholder="(89) 90000-0000">
+          </div>
+
+          <!-- Address (Only if Delivery) -->
+          <div id="address-fields-group">
+            <div class="form-section-title">
+              <i class="fa-solid fa-location-dot text-red"></i> 2. Endereço de Entrega
+            </div>
+
+            <div class="form-group">
+              <label for="delivery-street" class="form-label">Rua / Avenida e Número *</label>
+              <input type="text" id="delivery-street" class="form-control" placeholder="Ex: Av. João Bitonio, nº 120" required>
+            </div>
+
+            <div class="form-group">
+              <label for="delivery-reference" class="form-label">Ponto de Referência / Complemento</label>
+              <input type="text" id="delivery-reference" class="form-control" placeholder="Ex: Próximo à praça / Casa de portão branco">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Localidade Selecionada</label>
+              <input type="text" id="checkout-selected-locality" class="form-control" readonly disabled>
+            </div>
+          </div>
+
+          <!-- If Consumir no Local -->
+          <div id="dinein-fields-group" style="display: none;">
+            <div class="form-section-title">
+              <i class="fa-solid fa-chair text-red"></i> 2. Identificação da Mesa
+            </div>
+            <div class="form-group">
+              <label for="table-number" class="form-label">Número da Mesa ou Identificação *</label>
+              <input type="text" id="table-number" class="form-control" placeholder="Ex: Mesa 04 / Balcão">
+            </div>
+          </div>
+
+          <!-- If Retirar no Local -->
+          <div id="pickup-fields-group" style="display: none;">
+            <div class="form-section-title">
+              <i class="fa-solid fa-store text-red"></i> 2. Retirada no Balcão
+            </div>
+            <div class="pickup-notice-box">
+              <i class="fa-solid fa-store text-gold"></i>
+              <div>
+                <strong>Pizzaria e Doceria Paraíso</strong>
+                <p>Av. João Bitonio, São João da Canabrava. Você será avisado quando estiver pronto!</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Payment Section -->
+          <div class="form-section-title">
+            <i class="fa-solid fa-credit-card text-red"></i> 3. Forma de Pagamento
+          </div>
+
+          <div class="payment-options-grid">
+            <label class="payment-card-option">
+              <input type="radio" name="payment-method" value="PIX" checked>
+              <div class="payment-card-content">
+                <i class="fa-brands fa-pix text-gold"></i>
+                <span class="pay-title">PIX</span>
+                <span class="pay-sub">Rápido e prático</span>
+              </div>
+            </label>
+
+            <label class="payment-card-option">
+              <input type="radio" name="payment-method" value="Cartão">
+              <div class="payment-card-content">
+                <i class="fa-solid fa-credit-card text-gold"></i>
+                <span class="pay-title">Cartão</span>
+                <span class="pay-sub">Débito / Crédito</span>
+              </div>
+            </label>
+
+            <label class="payment-card-option">
+              <input type="radio" name="payment-method" value="Dinheiro">
+              <div class="payment-card-content">
+                <i class="fa-solid fa-money-bill-wave text-gold"></i>
+                <span class="pay-title">Dinheiro</span>
+                <span class="pay-sub">Com ou sem troco</span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Cash Payment Details & Change Calculation -->
+          <div id="cash-payment-section" class="cash-box" style="display: none;">
+            <label for="cash-given" class="form-label">Quanto você vai pagar em dinheiro?</label>
+            <div class="currency-input-group">
+              <span class="currency-prefix">R$</span>
+              <input type="number" id="cash-given" class="form-control" step="0.50" min="0" placeholder="Ex: 50.00">
+            </div>
+
+            <!-- Quick Cash Sugestions -->
+            <div class="cash-suggestions" id="cash-suggestions">
+              <!-- populated with exact total, rounded up 10, 20, 50, 100 -->
+            </div>
+
+            <!-- Change Result Display -->
+            <div id="change-result-display" class="change-result-display">
+              <!-- Dynamically shows Troco: R$ X,XX or insufficient error -->
+            </div>
+          </div>
+
+          <!-- Customer Observations -->
+          <div class="form-group" style="margin-top: 15px;">
+            <label for="order-notes" class="form-label">Observações do Pedido (Opcional)</label>
+            <textarea id="order-notes" class="form-control" rows="2" placeholder="Ex: Sem cebola, caprichar no orégano, ponto da carne..."></textarea>
+          </div>
+
+          <!-- Error Alert if any -->
+          <div id="checkout-error-banner" class="alert-banner-error" style="display: none;">
+            <i class="fa-solid fa-circle-exclamation"></i>
+            <span id="checkout-error-msg">Preencha todos os campos obrigatórios.</span>
+          </div>
+
+          <!-- WhatsApp Submit Button -->
+          <div class="checkout-footer-action">
+            <button type="button" id="btn-submit-whatsapp" class="btn-whatsapp-finish">
+              <i class="fa-brands fa-whatsapp"></i>
+              <span>ENVIAR PEDIDO PELO WHATSAPP</span>
+            </button>
+            <p class="whatsapp-sub-note">
+              <i class="fa-solid fa-lock"></i> Seu pedido será formatado e enviado diretamente para nosso atendimento: <strong>(89) 98819-4395</strong>
+            </p>
+          </div>
+
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ================================================== -->
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <!-- ================================================== -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
